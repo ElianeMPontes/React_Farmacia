@@ -3,7 +3,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
-import Categoria from "../../../model/Categoria";
+import Categoria from "../../../model/Categorias";
 
 function FormCategoria() {
 

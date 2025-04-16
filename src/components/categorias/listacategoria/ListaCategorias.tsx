@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Categoria from "../../../model/Categoria";
+import Categoria from "../../../model/Categorias";
 import { buscar } from "../../../services/Service";
 import CardCategoria from "../cardCategoria/CardCategoria";
 import { DNA } from "react-loader-spinner";
 
 
-function ListaCategoria() {
+function ListaCategorias() {
 
     const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ function ListaCategoria() {
 
     async function buscarCategoria() {
         try {
-            await buscar('/categoria', setCategoria)
+            await buscar('/categorias', setCategoria)
         } catch (error: any) {
             
         }
@@ -49,4 +49,4 @@ function ListaCategoria() {
     )
 }
 
-export default ListaCategoria;
+export default ListaCategorias;
