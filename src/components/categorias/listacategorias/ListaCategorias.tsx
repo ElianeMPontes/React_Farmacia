@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Categoria from "../../../model/Categorias";
 import { buscar } from "../../../services/Service";
-import CardCategoria from "../cardCategoria/CardCategoria";
+import CardCategoria from "../cardcategoria/CardCategoria";
 import { DNA } from "react-loader-spinner";
 
 

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import Categoria from "../../../model/Categorias";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormCategoria() {
 
@@ -16,7 +17,7 @@ function FormCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categoria/${id}`, setCategoria)
+            await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
             alert('Erro ao buscar a categoria.')
         }
@@ -37,7 +38,7 @@ function FormCategoria() {
     }
 
     function retornar() {
-        navigate("/categoria")
+        navigate("/categorias")
     }
 
     async function gerarNovaCategoria(e: ChangeEvent<HTMLFormElement>) {
@@ -46,17 +47,17 @@ function FormCategoria() {
 
         if (id !== undefined) {
             try {
-                await atualizar(`/categoria`, categoria, setCategoria)
-                alert('A categoria foi atualizada com sucesso!')
+                await atualizar(`/categorias`, categoria, setCategoria)
+                ToastAlerta('A categoria foi atualizada com sucesso!' , 'sucesso')
             } catch (error: any) {
-                    alert('Erro ao atualizar a categoria.')
+                ToastAlerta('Erro ao atualizar a categoria.', 'erro')
             }
         } else {
             try {
-                await cadastrar(`/categoria`, categoria, setCategoria)
-                alert('A categoria foi cadastrada com sucesso!')
+                await cadastrar(`/categorias`, categoria, setCategoria)
+                ToastAlerta('A categoria foi cadastrada com sucesso!', 'sucesso')
             } catch (error: any) {    
-                    alert('Erro ao cadastrar a categoria.')
+                ToastAlerta('Erro ao cadastrar a categoria.', 'erro')
             }
         }
 

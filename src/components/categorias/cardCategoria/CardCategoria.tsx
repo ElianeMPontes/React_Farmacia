@@ -9,11 +9,11 @@ interface CardCategoriaProps {
 function CardCategoria({ categoria }: CardCategoriaProps) {
     return (
         <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-            <header className='py-2 px-6 bg-red-800 text-white font-bold text-2xl'>
+            <header className='py-1 px-5 bg-red-800 text-white font-bold text-2xl'>
                 Categoria
             </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
+            <p className='p-4 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
+            <p className='p-4 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
             <div className="flex">
                 <Link to={`/editarcategoria/${categoria.id}`}
                     className='w-full text-black bg-	indigo-400 hover:bg-indigo-500 
